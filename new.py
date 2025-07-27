@@ -43,7 +43,7 @@ async def left(request: Request):
     data = await request.json()
     check = data.get("value")
     if check is not None:
-        result = await send_command_with_timeout(3, 0.25)  # 0.25 seconds timeout
+        result = await send_command_with_timeout(2, 0.25)  # 0.25 seconds timeout
         return result
     else:
         return {"status": "failed", "reason": "value not provided"}
